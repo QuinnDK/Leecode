@@ -33,10 +33,20 @@ func DoFileAndMethod(input interface{}) {
 	getValue := reflect.ValueOf(input)
 	fmt.Println("get all Fields is:", getValue)
 
+	// 获取方法字段
+	// 1. 先获取interface的reflect.Type，然后通过NumField进行遍历
+	// 2. 再通过reflect.Type的Field获取其Field
+	// 3. 最后通过Field的Interface()得到对应的value
 	for i := 0; i < getValue.NumField(); i++ {
 		field := getType.Field(i)
 		value := getValue.Field(i).Interface()
 		fmt.Printf("字段名称:%s ,字段类型:%s ,字段值:%v \n", field.Name, field.Type, value)
-
+	}
+	// 通过反射，操作方法
+	// 1. 先获取interface的reflect.Type，然后通过.NumMethod进行遍历
+	// 2. 再公国reflect.Type的Method获取其Method
+	for i := 0; i < getType.NumMethod(); i++ {
+		method := getType.Method(i)
+		fmt.Printf("方法名称:%s, 方法类型:%v \n", method.Name, method.Type)
 	}
 }
