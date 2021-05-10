@@ -1,7 +1,5 @@
 package 二叉树
 
-import "sort"
-
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
