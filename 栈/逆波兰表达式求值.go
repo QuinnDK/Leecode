@@ -39,5 +39,4 @@ func evalRPN(tokens []string) int {
 		}
 	}
 	return stack[0]
-
 }
