@@ -12,11 +12,8 @@ func crary(s string, num int) string {
 	for i := 1; i < len(nums); i++ {
 		nums[i] = nums[i] + nums[i-1]
 	}
-
 	for i := 0; i < len(str); i++ {
-
 		str[i] = byte((nums[i])%26) + 'a'
-		//fmt.Println(str[i])
 	}
 	return string(str)
 }
@@ -26,7 +23,6 @@ func decrary(s string, num int) string {
 	var nums = make([]int, len(str))
 	for i := 0; i < len(str); i++ {
 		nums[i] = int(str[i] - 'a')
-		//fmt.Println(nums[i])
 	}
 	l := len(nums) - 1
 	for i := l; i >= 1; i-- {
@@ -36,16 +32,8 @@ func decrary(s string, num int) string {
 		nums[i] = nums[i] - nums[i-1]
 	}
 	nums[0] = nums[0] - num
-
-	//nums[l-1]=nums[0]+num
-	//for i:=1;i<len(nums);i++{
-	//	nums[i]=nums[i]+nums[i-1]
-	//}
-
 	for i := 0; i < len(str); i++ {
-
 		str[i] = byte((nums[i])%26) + 'a'
-		//fmt.Println(str[i])
 	}
 	return string(str)
 }

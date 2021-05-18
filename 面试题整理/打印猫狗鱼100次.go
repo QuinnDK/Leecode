@@ -5,7 +5,9 @@ import (
 	"sync"
 	"sync/atomic"
 )
+
 var wg sync.WaitGroup
+
 func main() {
 	var dogcounter uint64
 	var fishcounter uint64
@@ -15,11 +17,11 @@ func main() {
 	catch := make(chan struct{}, 1)
 
 	wg.Add(3)
-	go dog(dogcounter,dogch,fishch)
-	go fish(fishcounter,fishch,catch)
-	go cat(catcounter,catch,dogch)
+	go dog(dogcounter, dogch, fishch)
+	go fish(fishcounter, fishch, catch)
+	go cat(catcounter, catch, dogch)
 
-	catch<- struct{}{}
+	catch <- struct{}{}
 	wg.Wait()
 
 }
