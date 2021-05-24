@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
-
 func main() {
 	//for i:=range "6b4e03423667dbb73b6e15454f0eb1abd4597f9a1b078e3f5b5a6bc7"{
 	//	fmt.Println(i)
@@ -36,10 +31,11 @@ func main() {
 	//}
 	//fmt.Println(buf.String())
 
-	var buf strings.Builder
-	str := []byte{97, 65, 100, 68, 'z'}
-	for i := 0; i < len(str); i++ {
-		buf.WriteString(string(str[i]))
-	}
-	fmt.Println(buf.String())
+	//var buf strings.Builder
+	//str := []byte{97, 65, 100, 68, 'z'}
+	//for i := 0; i < len(str); i++ {
+	//	buf.WriteString(string(str[i]))
+	//}
+	//fmt.Println(buf.String())
+
 }
