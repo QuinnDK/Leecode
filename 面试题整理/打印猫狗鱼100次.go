@@ -17,13 +17,27 @@ func main() {
 	catch := make(chan struct{}, 1)
 
 	wg.Add(3)
+
+	go cat(catcounter, catch, dogch)
 	go dog(dogcounter, dogch, fishch)
 	go fish(fishcounter, fishch, catch)
-	go cat(catcounter, catch, dogch)
 
 	catch <- struct{}{}
 	wg.Wait()
 
+}
+
+func cat(counter uint64, catch, dogch chan struct{}) {
+	for {
+		if counter >= uint64(100) {
+			wg.Done()
+			return
+		}
+		<-catch
+		fmt.Println("cat")
+		atomic.AddUint64(&counter, 1)
+		dogch <- struct{}{}
+	}
 }
 
 func dog(counter uint64, dogch, fishch chan struct{}) {
@@ -48,17 +62,5 @@ func fish(counter uint64, fishch, catch chan struct{}) {
 		fmt.Println("fish")
 		atomic.AddUint64(&counter, 1)
 		catch <- struct{}{}
-	}
-}
-func cat(counter uint64, catch, dogch chan struct{}) {
-	for {
-		if counter >= uint64(100) {
-			wg.Done()
-			return
-		}
-		<-catch
-		fmt.Println("cat")
-		atomic.AddUint64(&counter, 1)
-		dogch <- struct{}{}
 	}
 }
