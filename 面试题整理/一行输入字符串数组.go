@@ -39,7 +39,6 @@ import (
 
 func main() {
 	var nums []int
-
 	input := bufio.NewScanner(os.Stdin)
 	input.Scan()
 	str1 := strings.Split(input.Text(), " ")
