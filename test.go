@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -28,12 +29,14 @@ func main() {
 	//}
 	//fmt.Println(buf.String())
 
-	//var buf strings.Builder
-	//str:=[]string{"11"," 22","sss"}
-	//for i:=0;i<len(str);i++{
-	//	buf.WriteString(str[i])
-	//}
-	//fmt.Println(buf.String())
+	var buf strings.Builder
+	str := []string{"11", " 22", "sss"}
+	for i := 0; i < len(str); i++ {
+		buf.WriteString(str[i])
+	}
+	str1 := strings.Join(str, "")
+	fmt.Println(str1)
+	fmt.Println(buf.String())
 
 	//var buf strings.Builder
 	//str := []byte{97, 65, 100, 68, 'z'}
