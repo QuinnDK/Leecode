@@ -1,5 +1,11 @@
 package main
 
+import "fmt"
+
+func main() {
+	nums := []int{1, 2, 3, 4, 5, 6, 7, 0}
+	fmt.Print(reversePairs(nums))
+}
 func reversePairs(nums []int) int {
 	return mergeSort(nums, 0, len(nums)-1)
 }
