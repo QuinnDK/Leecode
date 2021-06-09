@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -38,6 +40,20 @@ func main() {
 	fmt.Println(str1)
 	fmt.Println(buf.String())
 
+	newreader := bufio.NewScanner(os.Stdin)
+	newreader.Scan()
+	str3 := newreader.Text()
+	fmt.Print(str3)
+	fmt.Print(len(str3))
+
+	//input:=bufio.NewReader(os.Stdin)
+	//str3,_:=input.ReadString('\n')
+	//fmt.Print(str3)
+	//fmt.Print(len(str3))
+
+	st2 := "123\n"
+	fmt.Print(st2)
+	fmt.Println(strings.TrimSpace(st2))
 	//var buf strings.Builder
 	//str := []byte{97, 65, 100, 68, 'z'}
 	//for i := 0; i < len(str); i++ {

@@ -21,6 +21,7 @@ func main() {
 	input.Scan()
 	str1 := strings.Split(input.Text(), " ")
 	//str := strings.ReplaceAll(input.Text(), " ", "")
+	fmt.Println(str1)
 	for i := 0; i < len(str1); i++ {
 		newstr := strings.Split(str1[i], ",")
 		num1, _ := strconv.Atoi(newstr[0])
