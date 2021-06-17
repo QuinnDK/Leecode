@@ -1,11 +1,8 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
+	"io"
 )
 
 type Listnodek struct {
@@ -19,13 +16,22 @@ func main() {
 	fmt.Scan(&n)
 
 	arr := []int{}
-	input := bufio.NewScanner(os.Stdin)
-	input.Scan()
-	str := strings.Split(input.Text(), " ")
-	for i := 0; i < len(str); i++ {
-		num, _ := strconv.Atoi(str[i])
-		arr = append(arr, num)
+	var a int
+	//input := bufio.NewScanner(os.Stdin)
+	//input.Scan()
+	//str := strings.Split(input.Text(), " ")
+	//for i := 0; i < len(str); i++ {
+	//	num, _ := strconv.Atoi(str[i])
+	//	arr = append(arr, num)
+	//}
+	for {
+		_, err := fmt.Scan(&a)
+		if err == io.EOF {
+			break
+		}
+		arr = append(arr, a)
 	}
+	fmt.Println(arr)
 	list1 := CreateList1(arr)
 	list2 := swap(list1, m, n)
 	show(list2)
