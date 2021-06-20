@@ -55,7 +55,9 @@ func chenzai(wight, value []int, W int) int {
 	for i := 0; i < len(dp); i++ {
 		dp[i] = make([]int, W+1)
 	}
-
+	for j := W; j >= wight[0]; j-- {
+		dp[0][j] = dp[0][j-wight[0]] + value[0]
+	}
 	for i := 1; i <= N; i++ {
 		for j := 1; j <= W; j++ {
 			if j-wight[i-1] < 0 {
