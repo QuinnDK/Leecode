@@ -1,4 +1,6 @@
-package 回溯
+package main
+
+import "fmt"
 
 var res [][]int
 var path []int
@@ -22,9 +24,14 @@ func backtrack(nums []int, used []bool) {
 	}
 }
 func permute(nums []int) [][]int {
-	res = make([][]int, 0)
-	path = make([]int, 0)
+	//res = make([][]int, 0)
+	//path = make([]int, 0)
 	used := make([]bool, len(nums))
 	backtrack(nums, used)
 	return res
+}
+
+func main() {
+	num := []int{1, 2, 3}
+	fmt.Print(permute(num))
 }

@@ -1,11 +1,8 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strings"
-)
+import "fmt"
+
+var res []int
 
 func main() {
 	//for i:=range "6b4e03423667dbb73b6e15454f0eb1abd4597f9a1b078e3f5b5a6bc7"{
@@ -31,7 +28,7 @@ func main() {
 	//}
 	//fmt.Println(buf.String())
 
-	var buf strings.Builder
+	/*var buf strings.Builder
 	str := []string{"11", " 22", "sss"}
 	for i := 0; i < len(str); i++ {
 		buf.WriteString(str[i])
@@ -44,16 +41,16 @@ func main() {
 	newreader.Scan()
 	str3 := newreader.Text()
 	fmt.Print(str3)
-	fmt.Print(len(str3))
+	fmt.Print(len(str3))*/
 
 	//input:=bufio.NewReader(os.Stdin)
 	//str3,_:=input.ReadString('\n')
 	//fmt.Print(str3)
 	//fmt.Print(len(str3))
 
-	st2 := "123\n"
-	fmt.Print(st2)
-	fmt.Println(strings.TrimSpace(st2))
+	/*	st2 := "123\n"
+		fmt.Print(st2)
+		fmt.Println(strings.TrimSpace(st2))*/
 	//var buf strings.Builder
 	//str := []byte{97, 65, 100, 68, 'z'}
 	//for i := 0; i < len(str); i++ {
@@ -83,8 +80,9 @@ func main() {
 	//fmt.Println(a, "a cap:", cap(a), "a len:", len(a))
 	//fmt.Println(b, "b cap:", cap(b), "b len:", len(b))
 
-	var a []int
-	a = append(a, 1, 3, 4, 4)
+	/*	var a []int
+		a = append(a, 1, 3, 4, 4)
 
-	fmt.Println(a)
+		fmt.Println(a)*/
+	fmt.Print(res)
 }

@@ -1,9 +1,11 @@
-package 回溯
+package main
+
+import "fmt"
 
 var res [][]int
 
 func combine(n int, k int) [][]int {
-	res = [][]int{}
+	//res = [][]int{}
 	if n <= 0 || k <= 0 || k > n {
 		return res
 	}
@@ -27,4 +29,8 @@ func getCombinations(n, k, start int, c []int) {
 			c = c[:len(c)-1]
 		}
 	}
+}
+func main() {
+	//num:=[]int{1,2,3}
+	fmt.Print(combine(5, 3))
 }
