@@ -29,14 +29,32 @@ func main() {
 	//sort.Sort(s)
 	//fmt.Print(s)
 
-	var t *int
-	t = new(int)
-	*t = 1
-	add(t)
-	fmt.Print(*t) //2
+	//var t *int
+	//t = new(int)
+	//*t = 1
+	//add(t)
+	//fmt.Print(*t) //2
+
+	arr := make([]int, 8)
+	fmt.Println(len(arr))
+	arr[0] = 1
+	arr[1] = 2
+	fmt.Println(len(arr))
+	fmt.Println(arr)
+
+	add(arr)
 
 }
-func add(a *int) int {
-	*a++
-	return *a
+
+func add(arr []int) {
+	fmt.Println(len(arr))
+	arr = append(arr, 1)
+	arr[3] = 1
+	fmt.Print(arr)
+
 }
+
+//func add(a *int) int {
+//	*a++
+//	return *a
+//}
