@@ -9,7 +9,7 @@ func bucketSort(arr []int) {
 	var res [99]int
 
 	for i := 0; i < len(arr); i++ {
-		res[10] = 1
+		//res[10] = 1
 		if res[arr[i]] != 0 {
 			res[arr[i]] = res[arr[i]] + 1
 		} else {
